@@ -11,3 +11,4 @@ How to:
 - Launch CBM
 - Open project in CBM
 - Hit Ctrl + F5, then Esc
+- You can quit the app by pressing Esc + PageUp
