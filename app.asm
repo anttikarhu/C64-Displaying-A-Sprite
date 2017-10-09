@@ -1,6 +1,9 @@
+; ALLOWS ONE TO START THE APPLICATION WITH RUN
 ; SYS 2064
 *=$0801 
          BYTE $0C, $8, $0A, $00, $9E, $20, $32, $30, $36, $34, $00, $00, $00, $00, $00
+
+CLEAR           = $E544
 
 SPR_ENABLE      = $D015
 SPR_MSBX        = $D010
@@ -15,6 +18,8 @@ SPR0_COLOR      = $D027
 SPR0_DATA       = $0340
 
 INIT
+        JSR CLEAR
+
         ; ENABLE SPRITES
         LDA #%00000001
         STA SPR_ENABLE
