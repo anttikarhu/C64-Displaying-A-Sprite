@@ -17,8 +17,7 @@ SPR0_Y          = $D001
 SPR0_COLOR      = $D027
 SPR0_DATA       = $0340
 
-INIT
-        JSR CLEAR
+INIT    JSR CLEAR
 
         ; ENABLE SPRITES
         LDA #%00000001
@@ -58,8 +57,7 @@ LOAD    LDA BOX,X
         CPX #63
         BNE LOAD
        
-LOOP
-        JMP LOOP
+LOOP    JMP LOOP
 
 BOX     BYTE 170,170,170
         BYTE 170,170,170
