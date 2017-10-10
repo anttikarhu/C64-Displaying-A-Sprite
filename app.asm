@@ -1,5 +1,9 @@
-; SYS 5120
-*=$1400
+; ALLOWS ONE TO START THE APPLICATION WITH RUN
+; SYS 2064
+*=$0801 
+         BYTE $0C, $8, $0A, $00, $9E, $20, $32, $30, $36, $34, $00, $00, $00, $00, $00
+
+CLEAR           = $E544
 
 
 SPR_ENABLE      = $D015 ; FLAGS FOR SPRITE ENABLING
@@ -20,7 +24,8 @@ COLOR_MEDIUM_GRAY       = #12
 COLOR_LIGHT_GRAY        = #15
 
 
-INIT
+INIT    JSR CLEAR
+
         ; ENABLE SPRITES
         LDA #%00000001
         STA SPR_ENABLE
@@ -59,8 +64,7 @@ LOAD    LDA BOX,X
         CPX #63
         BNE LOAD
        
-LOOP
-        JMP LOOP
+LOOP    JMP LOOP
 
 BOX     BYTE 170,170,170
         BYTE 170,170,170
